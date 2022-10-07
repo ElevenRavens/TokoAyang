@@ -16,7 +16,7 @@
     awesome/5.15.1/css/all.min.css">
 </head>
 <body>
-
+@yield('content')
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 integrity="sha384-
