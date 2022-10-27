@@ -49,3 +49,17 @@ Route::prefix('admin')->group(function () {
         Route::resource('kategori', KategoriController::class);
 
 });
+
+Route::prefix('/mahasiswa')->group( function(){
+    Route::get('/pendaftaran', function(){
+        return 'Halaman Pendaftaran';
+    })->name('mahasiswa.pendaftaran');
+
+    Route::get('/ujian', function(){
+        return 'Halaman Halaman Ujian';
+    })->name('mahasiswa.ujian');
+
+    Route::get('/nilai', function(){
+        return 'Halaman Nilai';
+    })->name('mahasiswa.nilai');
+});
