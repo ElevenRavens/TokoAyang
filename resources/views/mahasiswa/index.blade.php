@@ -9,12 +9,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>{{$KJ}}</h1>
+    <center><h1>{{$KJ}}</h1>
     <br>
-    <a href="">Pendaftaran</a>
+    <a href={{ Route ('mahasiswa.pendaftaran') }}>Pendaftaran</a>
     <br>
-    <a href="">Ujian</a>
+    <a href={{ Route ('mahasiswa.ujian') }}>Ujian</a>
     <br>
-    <a href="">Nilai</a>
+    <a href={{ Route ('mahasiswa.nilai') }}>Nilai</a></center>
+    
 </body>
 </html>

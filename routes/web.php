@@ -52,10 +52,10 @@ Route::prefix('admin')->group(function () {
 
 Route::prefix('/mahasiswa')->group( function(){
     Route::get('/pendaftaran', function(){
-        $mm =  "hALAMAN PENDAFTARAN";
+        $mm =  "HALAMAN PENDAFTARAN";
         $KJ =  "Ini Halaman Pendaftaran";
         return view('mahasiswa.index', compact ('mm', 'KJ'));
-    });
+    })->name ('mahasiswa.pendaftaran');
 
     Route::get('/ujian', function(){
         
@@ -63,13 +63,13 @@ Route::prefix('/mahasiswa')->group( function(){
         $KJ =  "Ini Halaman Ujian";
         return view('mahasiswa.index', compact ('mm', 'KJ'));
         
-    });
+    })->name ('mahasiswa.ujian');
 
     Route::get('/nilai', function(){
         $mm =  "HALAMAN NILAI";
         $KJ =  "Ini Halaman Nilai";
         return view('mahasiswa.index', compact ('mm', 'KJ'));
-    });
+    })->name ('mahasiswa.nilai');
 });
 
 
