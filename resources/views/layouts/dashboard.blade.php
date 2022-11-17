@@ -37,19 +37,19 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{ Route ('admin.dashboard') }}">
                                 <div class="sb-nav-link-icon"><i class="fa fa-pie-chart"></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{ Route ('admin.kategori') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fas fa-hippo"></i></div>
-                                Produk
+                                Kategori
                             </a>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{ Route ('admin.transaksi') }}">
                                 <div class="sb-nav-link-icon"><i class="fa fa-bitcoin"></i></div>
                                 Transaksi
                             </a>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{ Route ('admin.laporan') }}">
                                 <div class="sb-nav-link-icon"><i class="fa fa-file"></i></div>
                                 Laporan
                             </a>
@@ -65,6 +65,7 @@
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">{{$title}}</h1>
+                        @yield('content')
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active"></li>
                         </ol>

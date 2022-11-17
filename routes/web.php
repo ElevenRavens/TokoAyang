@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\ProdukController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,16 +40,23 @@ Route::get('/kontak', [HomepageController::class, 'kontak']);
 
 Route::get('/kategori', [HomepageController::class, 'kategori']);
 
-// Route kategori grup
-// Route::group(['prefix' => 'admin'], function(){
-//     Route::get('/', 'DashboardController@index');
-//     // route kategori
-//     Route::resource('kategori', KategoriController::class);
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/kategori', [KategoriController::class, 'index'])->name('admin.kategori');
+    Route::get('/transaksi', [TransaksiController::class, 'index'])->name('admin.transaksi');
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('admin.laporan');
+    Route::get('/produk', [ProdukController::class, 'index'])->name('admin.produk');
 
-// });
+    Route::group(['prefix' => 'kategori'], function(){
+        Route::get('/', [KategoriController::class, 'index'])->name('admin.kategori');
+        Route::get('/create', [KategoriController::class, 'create'])->name('create.kategori');
+        Route::get('/edit', [KategoriController::class, 'edit'])->name('edit.kategori');
+    });
 
-Route::prefix('admin')->group(function () {
-    Route::get('/', [DashboardController::class, 'index']);
-        Route::resource('kategori', KategoriController::class);
-
+    Route::group(['prefix' => 'produk'], function(){
+        Route::get('/', [ProdukController::class, 'index'])->name('admin.produk');
+        Route::get('/create', [ProdukController::class, 'create'])->name('create.produk');
+        Route::get('/1', [ProdukController::class, 'show'])->name('show.produk');
+        Route::get('/2', [ProdukController::class, 'edit'])->name('edit.produk');
+    });
 });
