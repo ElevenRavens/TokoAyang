@@ -60,3 +60,27 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/2', [ProdukController::class, 'edit'])->name('edit.produk');
     });
 });
+
+Route::prefix('/mahasiswa')->group( function(){
+    Route::get('/pendaftaran', function(){
+        $mm =  "HALAMAN PENDAFTARAN";
+        $KJ =  "Ini Halaman Pendaftaran";
+        return view('mahasiswa.index', compact ('mm', 'KJ'));
+    })->name ('mahasiswa.pendaftaran');
+
+    Route::get('/ujian', function(){
+        
+        $mm =  "HALAMAN UJIAN";
+        $KJ =  "Ini Halaman Ujian";
+        return view('mahasiswa.index', compact ('mm', 'KJ'));
+        
+    })->name ('mahasiswa.ujian');
+
+    Route::get('/nilai', function(){
+        $mm =  "HALAMAN NILAI";
+        $KJ =  "Ini Halaman Nilai";
+        return view('mahasiswa.index', compact ('mm', 'KJ'));
+    })->name ('mahasiswa.nilai');
+});
+
+
