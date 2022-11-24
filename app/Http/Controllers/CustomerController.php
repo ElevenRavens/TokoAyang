@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TransaksiController extends Controller
+class CustomerController extends Controller
 {
-    public function index (){
-        $data = array('title' => 'Transaksi');
-        return view('transaksi.index', $data);
+    /**
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function index()
+    {
+    $data = array('title' => 'Data Customer');
+    return view('customer.index', $data);
     }
-
     /**
     * Show the form for creating a new resource.
     *
@@ -38,9 +43,9 @@ class TransaksiController extends Controller
     */
     public function show()
     {
-    $data = array('title' => 'Detail Transaksi');
-    return view('transaksi.show', $data);
+    //
     }
+
     /**
     * Show the form for editing the specified resource.
     *
@@ -49,8 +54,8 @@ class TransaksiController extends Controller
     */
     public function edit()
     {
-    $data = array('title' => 'Form Edit Transaksi');
-    return view('transaksi.edit', $data);
+    $data = array('title' => 'Form Edit Customer');
+    return view('customer.edit', $data);
     }
     /**
     * Update the specified resource in storage.
