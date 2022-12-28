@@ -10,4 +10,8 @@ class LaporanController extends Controller
         $data = array('title' => 'Laporan');
         return view('laporan.index', $data);
     }
+    public function proses (){
+        $data = array('title' => 'Laporan Penjualan');
+        return view('laporan.proses', $data);
+    }
 }

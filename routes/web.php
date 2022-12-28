@@ -52,6 +52,8 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/customer', [CustomerController::class, 'index'])->name('admin.customer');
     Route::get('/profil', [UserController::class, 'index'])->name('admin.userprofil');
     Route::get('/setting', [UserController::class, 'setting'])->name('admin.usersetting');
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('admin.laporan');
+    Route::get('/proseslaporan', [LaporanController::class, 'proses'])->name('admin.proseslaporan');
 
     Route::group(['prefix' => 'kategori'], function(){
         Route::get('/', [KategoriController::class, 'index'])->name('admin.kategori');
@@ -101,3 +103,7 @@ Route::prefix('/mahasiswa')->group( function(){
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
